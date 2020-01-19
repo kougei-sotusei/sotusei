@@ -26,5 +26,4 @@ public class ClerJudg
 
         return flag;
     }
-
 }

@@ -17,33 +17,35 @@ public class ObjController : MonoBehaviour {
 
     void Start () {
         clerFlag = false;
-        StageNum = = Stage.GetStage();
+        StageNum =  Stage.GetStage();
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     //ボタン押したら動き出す
-    //一緒にクリアしてるかどうかも判定
     public void PushStart()
     {
-        clerFlag = ClerJudg.ClerCheck(StageNum,camera.rotation);
-
         navMeshAgent.destination = Endobj.position;
     }
 
-
+    //クリア判定
+    //クリアしてなかったら所定の位置に戻る
     void OnTriggerEnter(Collider other)
     {
         bool Nameflag = other.gameObject.name == Endobj.name;
 
-        if(Nameflag && clerFlag)
+        if(Nameflag)
         {
-            this.transform.DOMove(
-            Startobj.transform.position, 0.5f);
-            GetComponent<NavMeshAgent>().enabled = false;
-        }
-        else if (Nameflag)
-        {
-            navMeshAgent.destination = Startobj.position;
+            //clerFlag = ClerJudg.ClerCheck(StageNum, camera.rotation);
+            if (clerFlag)
+            {
+                this.transform.DOMove(
+                Startobj.transform.position, 0.5f);
+                GetComponent<NavMeshAgent>().enabled = false;
+            }
+            else
+            {
+                navMeshAgent.destination = Startobj.position;
+            }
         }
     }
 }
