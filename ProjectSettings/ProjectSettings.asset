@@ -149,7 +149,8 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.unity3d.sotusei
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
@@ -664,9 +665,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 1e092c84-541b-428e-b3b3-e91e040ea3be
+  cloudProjectId: b2757f0f-406a-4c39-a2ab-ab4be5c71415
   projectName: sotuseiGame
-  organizationId: czamy00
+  organizationId: unity_9g24yvf2v_ok9q
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
