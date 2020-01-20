@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FadeController : MonoBehaviour {
 
-    Image image;
+    static Image image;
 
     static  bool flag;
     float alfa=0f;
@@ -44,9 +44,15 @@ public class FadeController : MonoBehaviour {
         GetComponent<Image>().enabled = false;
     }
 
-    public  void FadeFlag()
+    public  void FadeFlagButton()
     {
-        GetComponent<Image>().enabled = true;
+        image.enabled = true;
+        flag = true;
+    }
+
+    public static void FadeFlag()
+    {
+        image.enabled = true;
         flag = true;
     }
 }
