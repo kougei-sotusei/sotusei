@@ -11,19 +11,17 @@ public class Stage : MonoBehaviour
     public enum SelectStage
     {
         Title = 0,
-        One,
-        Two,
-        Three,
-        Four,
-        Five,
-        Tutorial
+        stage
     }
 
     static SelectStage selectStage = SelectStage.Title;
 
+    static string StageName = "stage_";
+    static int StageNum;
+
     public static int GetStage()
     {
-        return (int)selectStage;
+        return StageNum;
     }
 
     public static void SetNowStage(SelectStage stage)
@@ -36,43 +34,16 @@ public class Stage : MonoBehaviour
         return (int)System.Enum.GetNames(typeof(SelectStage)).Length;
     }
 
-    public static void Change()
+    public static void Changestage()
     {
-        switch (selectStage)
-        {
-            case SelectStage.Title:
-                SceneManager.LoadScene("One");
-                break;
-            case SelectStage.One:
-                SceneManager.LoadScene("Two");
-                break;
-            case SelectStage.Two:
-                SceneManager.LoadScene("Three");
-                break;
-            case SelectStage.Three:
-                SceneManager.LoadScene("Four");
-                break;
-            case SelectStage.Four:
-                SceneManager.LoadScene("Five");
-                break;
-            case SelectStage.Five:
-                SceneManager.LoadScene("Title");
-                break;
-        }
-        
-        if(selectStage!=SelectStage.Five)
-        {
-            selectStage += 1;
-        }
-        else
-        {
-            selectStage = 0;
-        }
-
+        StageNum += 1;
+        Debug.Log(StageName + StageNum);
+        SceneManager.LoadScene(StageName + StageNum);
     }
+
     public static void ChengeTitle()
     {
-        SceneManager.LoadScene("Title");
         selectStage = 0;
+        SceneManager.LoadScene("Title");
     }
 }

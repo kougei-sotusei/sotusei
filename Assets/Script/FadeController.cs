@@ -30,7 +30,7 @@ public class FadeController : MonoBehaviour {
 
         if (alfa>1)
         {
-            Stage.Change();
+            Stage.Changestage();
             Reset();
         }
 

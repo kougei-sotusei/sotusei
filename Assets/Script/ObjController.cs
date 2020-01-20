@@ -4,47 +4,54 @@ using UnityEngine;
 using UnityEngine.AI;
 using DG.Tweening;
 
-public class ObjController : MonoBehaviour {
+public class ObjController : MonoBehaviour
+{
 
-    [SerializeField] Transform Startobj;
-    [SerializeField] Transform Endobj;
+    [SerializeField] Transform OffMeshStart;
+    [SerializeField] Transform OffMeshFlag;
+    [SerializeField] Transform[] goleobj;
+    [SerializeField] Transform Initialpos;
     [SerializeField] Transform camera;
 
     NavMeshAgent navMeshAgent;
- 
     bool clerFlag;
     int StageNum;
+    int Index;
+    int Length;
 
-    void Start () {
+    void Start()
+    {
         clerFlag = false;
-        StageNum =  Stage.GetStage();
+        StageNum = Stage.GetStage();
+        Length = goleobj.Length;
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     //ボタン押したら動き出す
-    public void PushStart()
+    public virtual void PushStart()
     {
-        navMeshAgent.destination = Endobj.position;
+        Index = 0;
+        OffMeshStart.gameObject.SetActive(true);
+        navMeshAgent.destination = goleobj[0].position;
     }
 
     //クリア判定
     //クリアしてなかったら所定の位置に戻る
     void OnTriggerEnter(Collider other)
     {
-        bool Nameflag = other.gameObject.name == Endobj.name;
-
-        if(Nameflag)
+        if (other.name == goleobj[Index].name && Index < Length)
+        {
+            Index += 1;
+            navMeshAgent.destination = goleobj[Index].position;
+        }
+        else if (other.gameObject.name == OffMeshFlag.name)
         {
             //clerFlag = ClerJudg.ClerCheck(StageNum, camera.rotation);
-            if (clerFlag)
+            if (!clerFlag)
             {
-                this.transform.DOMove(
-                Startobj.transform.position, 0.5f);
-                GetComponent<NavMeshAgent>().enabled = false;
-            }
-            else
-            {
-                navMeshAgent.destination = Startobj.position;
+                Index--;
+                navMeshAgent.CompleteOffMeshLink();
+                navMeshAgent.destination = Initialpos.position;
             }
         }
     }
