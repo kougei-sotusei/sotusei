@@ -25,16 +25,6 @@ public class Stage : MonoBehaviour
         return StageNum;
     }
 
-    public static void SetNowStage(SelectStage stage)
-    {
-        selectStage = stage;
-    }
-
-    public static int MaxStageNum()
-    {
-        return (int)System.Enum.GetNames(typeof(SelectStage)).Length;
-    }
-
     public static void Changestage()
     {
         if (StageNum == lastStage)
