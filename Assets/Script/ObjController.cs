@@ -57,7 +57,7 @@ public class ObjController : MonoBehaviour
         }
         else if (other.gameObject.name == OffMeshFlag.name)
         {
-            clerFlag = ClerJudg.ClerCheck(StageNum, camera.rotation);
+            clerFlag = ClerJudg.ClerCheck(1, camera.rotation);
             Debug.Log(clerFlag);
             if (!clerFlag)
             {
