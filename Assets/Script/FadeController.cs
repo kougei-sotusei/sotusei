@@ -52,7 +52,7 @@ public class FadeController : MonoBehaviour {
 
     public static void FadeFlag()
     {
-        //image.enabled = true;
-        //flag = true;
+        image.enabled = true;
+        flag = true;
     }
 }
