@@ -9,7 +9,7 @@ public class ObjController : MonoBehaviour
 {
 
     [SerializeField] Transform OffMeshFlag;
-    [SerializeField] Transform[] goleobj;
+    [SerializeField] Transform[] goalobj;
     [SerializeField] Transform camera;
     [SerializeField] Button button;
     NavMeshAgent navMeshAgent;
@@ -25,7 +25,7 @@ public class ObjController : MonoBehaviour
         clearNum = 0;
         clerFlag = false;
         StageNum = Stage.GetStage();
-        Length = goleobj.Length;
+        Length = goalobj.Length;
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -35,7 +35,7 @@ public class ObjController : MonoBehaviour
         mis = false;
         Index = 1;
         button.enabled = false;
-        navMeshAgent.destination = goleobj[Index].position;
+        navMeshAgent.destination = goalobj[Index].position;
     }
 
 
@@ -43,17 +43,17 @@ public class ObjController : MonoBehaviour
     //クリアしてなかったら所定の位置に戻る
     void OnTriggerEnter(Collider other)
     {
-        bool nameflag = other.name == goleobj[Index].name;
+        bool nameflag = other.name == goalobj[Index].name;
 
         if (mis && Index > clearNum && nameflag)
         {
             Index -= 1;
-            navMeshAgent.destination = goleobj[Index].position;
+            navMeshAgent.destination = goalobj[Index].position;
         }
         else if (!mis && Index < Length && nameflag)
         {
             Index += 1;
-            navMeshAgent.destination = goleobj[Index].position;
+            navMeshAgent.destination = goalobj[Index].position;
         }
         else if (other.gameObject.name == OffMeshFlag.name)
         {
@@ -64,7 +64,7 @@ public class ObjController : MonoBehaviour
                 if (Index >= 1)
                     Index -= 1;
                 navMeshAgent.CompleteOffMeshLink();
-                navMeshAgent.destination = goleobj[Index].position;
+                navMeshAgent.destination = goalobj[Index].position;
             }
             else
             {
@@ -72,7 +72,7 @@ public class ObjController : MonoBehaviour
             }
         }
 
-        if (other.name == goleobj[0].name)
+        if (other.name == goalobj[0].name)
         {
             button.enabled = true;
         }

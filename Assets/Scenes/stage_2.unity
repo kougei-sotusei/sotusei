@@ -2029,7 +2029,7 @@ GameObject:
   - component: {fileID: 1949167894}
   - component: {fileID: 1949167893}
   m_Layer: 0
-  m_Name: gole
+  m_Name: goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2203,9 +2203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OffMeshFlag: {fileID: 828931086}
-  goleobj:
-  - {fileID: 1044810259}
-  - {fileID: 1949167896}
+  goalobj: []
   camera: {fileID: 23106661}
   button: {fileID: 2016787778}
 --- !u!195 &1987569477
