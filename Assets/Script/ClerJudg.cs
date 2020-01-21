@@ -14,7 +14,7 @@ public class ClerJudg
     static float[] ErrorValueZ = new float[] { 0, 0, 0, 0, 0 };
     static bool flag;
 
-    static int Stagenum =9;
+    static int Stagenum =1;
 
     public static bool ClerCheck(Quaternion CameraRot)
     {
