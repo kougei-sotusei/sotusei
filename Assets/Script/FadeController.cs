@@ -28,10 +28,10 @@ public class FadeController : MonoBehaviour {
 
         image.color = new Color(255, 255, 255, alfa);
 
-        if (alfa>1)
+        if (alfa>=1)
         {
-            Stage.Changestage();
             Reset();
+            Stage.Changestage();
         }
 
     }
@@ -40,7 +40,7 @@ public class FadeController : MonoBehaviour {
     {
         flag = false;
         alfa = 0;
-        image.color = new Color(255, 255, 255, 0);
+       // image.color = new Color(255, 255, 255, 0);
         GetComponent<Image>().enabled = false;
     }
 

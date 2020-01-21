@@ -10,14 +10,17 @@ public class OpenUI : MonoBehaviour {
     public void Open()
     {
         Panel.SetActive(true);
+        Time.timeScale = 0;
     }
     public void Close()
     {
+        Time.timeScale = 1;
         Panel.SetActive(false);
     }
     public void to_Title()
     {
         Panel.SetActive(false);
+        Time.timeScale = 1;
         Stage.ChengeTitle();
     }
 }

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Stage : MonoBehaviour
 {
 
+    static int lastStage = 9;
     public enum SelectStage
     {
         Title = 0,
@@ -36,14 +37,18 @@ public class Stage : MonoBehaviour
 
     public static void Changestage()
     {
-        StageNum += 1;
-        Debug.Log(StageName + StageNum);
-        SceneManager.LoadScene(StageName + StageNum);
+        if (StageNum == lastStage)
+            ChengeTitle();
+        else
+        {
+            StageNum += 1;
+            SceneManager.LoadScene(StageName + StageNum);
+        }
     }
 
     public static void ChengeTitle()
     {
-        selectStage = 0;
+        StageNum = 0;
         SceneManager.LoadScene("Title");
     }
 }
