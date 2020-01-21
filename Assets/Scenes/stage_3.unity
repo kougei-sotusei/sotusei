@@ -1185,11 +1185,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OffMeshFlag: {fileID: 1163001440}
-  goleobj:
+  goalobj:
   - {fileID: 1037411129}
   - {fileID: 2012186416}
   camera: {fileID: 955889340}
   button: {fileID: 1853057872}
+  flag: 0
 --- !u!136 &876398368
 CapsuleCollider:
   m_ObjectHideFlags: 0

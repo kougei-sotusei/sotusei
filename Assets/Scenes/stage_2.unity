@@ -2203,9 +2203,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OffMeshFlag: {fileID: 828931086}
-  goalobj: []
+  goalobj:
+  - {fileID: 1044810259}
+  - {fileID: 1949167896}
   camera: {fileID: 23106661}
   button: {fileID: 2016787778}
+  flag: 0
 --- !u!195 &1987569477
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2299,7 +2302,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1987569476}
         m_MethodName: PushStart
         m_Mode: 1
         m_Arguments:

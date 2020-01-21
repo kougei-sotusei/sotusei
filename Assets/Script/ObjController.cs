@@ -11,7 +11,7 @@ public class ObjController : MonoBehaviour
     [SerializeField] Transform OffMeshFlag;
     [SerializeField] Transform[] goalobj;
     [SerializeField] Transform camera;
-    [SerializeField] Button button;
+    public Button button;
     NavMeshAgent navMeshAgent;
     bool clerFlag;
     bool mis;
@@ -30,7 +30,7 @@ public class ObjController : MonoBehaviour
     }
 
     //ボタン押したら動き出す
-    public virtual void PushStart()
+    public void PushStart()
     {
         mis = false;
         Index = 1;
@@ -50,7 +50,7 @@ public class ObjController : MonoBehaviour
             Index -= 1;
             navMeshAgent.destination = goalobj[Index].position;
         }
-        else if (!mis && Index < Length && nameflag)
+        else if (!mis && Index < Length - 1 && nameflag)
         {
             Index += 1;
             navMeshAgent.destination = goalobj[Index].position;
@@ -71,7 +71,6 @@ public class ObjController : MonoBehaviour
                 clearNum++;
             }
         }
-
         if (other.name == goalobj[0].name)
         {
             button.enabled = true;
