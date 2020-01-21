@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ObjController : MonoBehaviour
 {
 
-    [SerializeField] Transform OffMeshFlag;
+    [SerializeField] Transform[] OffMeshFlag;
     [SerializeField] Transform[] goalobj;
     [SerializeField] Transform camera;
     public Button button;
@@ -33,7 +33,7 @@ public class ObjController : MonoBehaviour
     public void PushStart()
     {
         mis = false;
-        Index = 1;
+        Index = clearNum+1;
         button.enabled = false;
         navMeshAgent.destination = goalobj[Index].position;
     }
@@ -45,21 +45,20 @@ public class ObjController : MonoBehaviour
     {
         bool nameflag = other.name == goalobj[Index].name;
 
-        if (mis && Index > clearNum && nameflag)
+        if (mis && Index > clearNum && nameflag)//帰り道のルートをただるため
         {
             Index -= 1;
             navMeshAgent.destination = goalobj[Index].position;
         }
-        else if (!mis && Index < Length - 1 && nameflag)
+        else if (!mis && Index < Length - 1 && nameflag)//生き道ののルートをただるため
         {
             Index += 1;
             navMeshAgent.destination = goalobj[Index].position;
         }
-        else if (other.gameObject.name == OffMeshFlag.name)
+        else if (other.gameObject.name == OffMeshFlag[clearNum].name)//足場が離れているところを通れるかどうかの判定
         {
-            clerFlag = ClerJudg.ClerCheck(1, camera.rotation);
-            Debug.Log(clerFlag);
-            if (!clerFlag)
+            clerFlag = ClerJudg.ClerCheck(camera.rotation);
+            if (!clerFlag && !mis)
             {
                 mis = true;
                 if (Index >= 1)
@@ -67,12 +66,12 @@ public class ObjController : MonoBehaviour
                 navMeshAgent.CompleteOffMeshLink();
                 navMeshAgent.destination = goalobj[Index].position;
             }
-            else
+            else if(clerFlag)
             {
                 clearNum++;
             }
         }
-        if (other.name == goalobj[0].name)
+        if (other.name == goalobj[clearNum].name)
         {
             button.enabled = true;
         }

@@ -881,7 +881,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 828931082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.663, y: 2.498, z: 14.19}
+  m_LocalPosition: {x: -6.663, y: 2.498, z: 9.77}
   m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2630,7 +2630,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9613671455b6fbb46b5bbd7fbd0bd163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OffMeshFlag: {fileID: 828931086}
+  OffMeshFlag:
+  - {fileID: 828931086}
+  - {fileID: 828931086}
   goalobj:
   - {fileID: 1044810259}
   - {fileID: 1949167896}

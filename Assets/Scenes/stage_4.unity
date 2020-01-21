@@ -2523,7 +2523,7 @@ OffMeshLink:
   m_AreaIndex: 0
   m_AgentTypeID: 0
   m_Start: {fileID: 1897399148}
-  m_End: {fileID: 970282280}
+  m_End: {fileID: 551439964}
   m_CostOverride: -1
   m_BiDirectional: 0
   m_Activated: 1
@@ -2663,7 +2663,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9613671455b6fbb46b5bbd7fbd0bd163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OffMeshFlag: {fileID: 2110899368}
+  OffMeshFlag:
+  - {fileID: 2110899368}
+  - {fileID: 2110899368}
   goalobj:
   - {fileID: 646556428}
   - {fileID: 1697507292}

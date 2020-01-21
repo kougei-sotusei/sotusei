@@ -244,7 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9613671455b6fbb46b5bbd7fbd0bd163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OffMeshFlag: {fileID: 1154138623}
+  OffMeshFlag:
+  - {fileID: 1154138623}
   goalobj:
   - {fileID: 2053623972}
   - {fileID: 229496815}
