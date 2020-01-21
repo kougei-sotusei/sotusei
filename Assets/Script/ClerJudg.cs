@@ -25,13 +25,9 @@ public class ClerJudg
         rot.y = cameraRot.y - ClerRotY[Stagenum];
         rot.z = cameraRot.z - ClerRotZ[Stagenum];
 
-        Debug.Log(rot);
-        Debug.Log(cameraRot);
-
-        if (0 <= rot.x && 0 <= rot.y && 0 <= rot.z)
+        if (0 <= rot.x && 0 <= rot.y)
         {
-            Debug.Log("a");
-            if (rot.x <= ErrorValueX[Stagenum] && rot.y <= ErrorValueY[Stagenum] && rot.z <= ErrorValueZ[Stagenum])
+            if (rot.x <= ErrorValueX[Stagenum] && rot.y <= ErrorValueY[Stagenum])
                 flag = true;
         }
 
