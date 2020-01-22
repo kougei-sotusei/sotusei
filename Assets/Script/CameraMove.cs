@@ -21,14 +21,17 @@ public class CameraMove : MonoBehaviour
     bool MouseDown = false;
     bool PinchStart = true;
 
-
+    [SerializeField] GameObject Player;
+    ObjController objController;
     void Start()
     {
+        objController = Player.GetComponent<ObjController>();
     }
 
     void Update()
     {
 
+        if(objController.button.enabled)
         if (Input.GetMouseButtonDown(0) || (Input.touchCount == 1 && !MouseDown))
         {
             MousePos = Input.mousePosition;

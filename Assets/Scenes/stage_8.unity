@@ -8226,6 +8226,7 @@ MonoBehaviour:
   pinchZoomSpeed: 5
   MaxSwipe: 30
   MinSwipe: -20
+  Player: {fileID: 1489892092}
 --- !u!4 &964487887
 Transform:
   m_ObjectHideFlags: 0
