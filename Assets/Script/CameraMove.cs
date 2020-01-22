@@ -34,31 +34,31 @@ public class CameraMove : MonoBehaviour
             MousePos = Input.mousePosition;
             MouseDown = true;
         }
-        else if (Input.touchCount == 2)
-        {
-            if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[1].phase == TouchPhase.Ended)
-            {
-                PinchStart = true;
-            }
-            else if (Input.touches[0].phase == TouchPhase.Moved || Input.touches[1].phase == TouchPhase.Moved)
-            {
-                if (PinchStart)
-                {
-                    PinchStart = false;
+        //else if (Input.touchCount == 2)
+        //{
+        //    if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[1].phase == TouchPhase.Ended)
+        //    {
+        //        PinchStart = true;
+        //    }
+        //    else if (Input.touches[0].phase == TouchPhase.Moved || Input.touches[1].phase == TouchPhase.Moved)
+        //    {
+        //        if (PinchStart)
+        //        {
+        //            PinchStart = false;
 
-                    PinchDistance = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
-                    CameraPos = camera.transform.localPosition;
-                }
+        //            PinchDistance = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+        //            CameraPos = camera.transform.localPosition;
+        //        }
 
-                float currentPinchDistance = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
-                float pinchZoomDistance = (PinchDistance - currentPinchDistance) * pinchZoomSpeed * 0.05f;
-                float cameraPosZ = CameraPos.z - pinchZoomDistance;
+        //        float currentPinchDistance = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+        //        float pinchZoomDistance = (PinchDistance - currentPinchDistance) * pinchZoomSpeed * 0.05f;
+        //        float cameraPosZ = CameraPos.z - pinchZoomDistance;
 
-                camera.transform.localPosition = new Vector3(camera.transform.localPosition.x, camera.transform.localPosition.y, cameraPosZ);
-            }
+        //        camera.transform.localPosition = new Vector3(camera.transform.localPosition.x, camera.transform.localPosition.y, cameraPosZ);
+        //    }
 
-            MouseDown = false;
-        }
+        //    MouseDown = false;
+        //}
 
         if (MouseDown)
         {
