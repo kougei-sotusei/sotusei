@@ -31,12 +31,12 @@ public class CameraMove : MonoBehaviour
     void Update()
     {
 
-        if(objController.button.enabled)
-        if (Input.GetMouseButtonDown(0) || (Input.touchCount == 1 && !MouseDown))
-        {
-            MousePos = Input.mousePosition;
-            MouseDown = true;
-        }
+        if (objController.button.enabled)
+            if (Input.GetMouseButtonDown(0) || (Input.touchCount == 1 && !MouseDown))
+            {
+                MousePos = Input.mousePosition;
+                MouseDown = true;
+            }
         //else if (Input.touchCount == 2)
         //{
         //    if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[1].phase == TouchPhase.Ended)

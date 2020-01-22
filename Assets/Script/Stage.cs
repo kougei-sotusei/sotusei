@@ -39,6 +39,7 @@ public class Stage : MonoBehaviour
     public static void ChengeTitle()
     {
         StageNum = 0;
+        ClerJudg.SetStageNum(1);
         SceneManager.LoadScene("Title");
     }
 }

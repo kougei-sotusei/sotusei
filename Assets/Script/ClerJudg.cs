@@ -5,12 +5,12 @@ using UnityEngine;
 public class ClerJudg
 {
 
-    static float[] ClerRotX = new float[] { 0, 45, 30, 11, 3, 1, 0, 0, 8, 35, 56, 70 };
-    static float[] ClerRotY = new float[] { 0, 168, 360 - 100, 360 - 147, 4, 5, 360 - 9, 137, 30,360 - 212, 360 - 185, 12 };
+    static float[] ClerRotX = new float[] { 0, 40, 30, 11, 3, 1, 0, 0, 8, 35, 56, 70 };
+    static float[] ClerRotY = new float[] { 0, 137, 360 - 100, 360 - 147, 4, 5, 360 - 9, 137, 30,360 - 212, 360 - 185, 12 };
     static float[] ClerRotZ = new float[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-    static float[] ErrorValueX = new float[] { 0, 7, 15, 8, 9, 34, 60, 60, 14,8, 7, 4 };//誤差
-    static float[] ErrorValueY = new float[] { 0, 5, 68, 5, 16, 5, 3, 3, 5, 48,25, 10 };
+    static float[] ErrorValueX = new float[] { 0, 12, 15, 8, 9, 34, 60, 60, 14,8, 7, 4 };//誤差
+    static float[] ErrorValueY = new float[] { 0, 36, 68, 5, 16, 5, 3, 8, 5, 48,25, 10 };
     static float[] ErrorValueZ = new float[] { 0, 0, 0, 0, 0 };
     static bool flag;
 
@@ -38,5 +38,10 @@ public class ClerJudg
         Debug.Log(Stagenum);
 
         return flag;
+    }
+
+    public static void SetStageNum(int num)
+    {
+        Stagenum = num;
     }
 }

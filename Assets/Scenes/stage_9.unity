@@ -2550,7 +2550,7 @@ MonoBehaviour:
   - {fileID: 674308089}
   - {fileID: 486269540}
   camera: {fileID: 1953526161}
-  button: {fileID: 0}
+  button: {fileID: 1484486629}
 --- !u!136 &1478651757
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2695,7 +2695,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1478651756}
         m_MethodName: PushStart
         m_Mode: 1
         m_Arguments:
